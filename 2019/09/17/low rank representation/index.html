@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="The discriminations between the Low rank representation method and RPCA method1. The representation differenceThe RPCA prototype can be formulated by : $$\min {D, E} \operatorname{rank}(D)+\lambda|E|{">
+<meta name="description" content="The discriminations between the Low rank representation method and RPCA method1. The representation difference The RPCA prototype can be formulated by :  \min _{D, E} \operatorname{rank}(D)+\lambda\|E">
 <meta name="keywords" content="低秩表示,RPCA">
 <meta property="og:type" content="article">
 <meta property="og:title" content="low rank representation">
 <meta property="og:url" content="http://yoursite.com/2019/09/17/low rank representation/index.html">
 <meta property="og:site_name" content="Welcome">
-<meta property="og:description" content="The discriminations between the Low rank representation method and RPCA method1. The representation differenceThe RPCA prototype can be formulated by : $$\min {D, E} \operatorname{rank}(D)+\lambda|E|{">
+<meta property="og:description" content="The discriminations between the Low rank representation method and RPCA method1. The representation difference The RPCA prototype can be formulated by :  \min _{D, E} \operatorname{rank}(D)+\lambda\|E">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-22T03:28:57.632Z">
+<meta property="og:updated_time" content="2020-04-03T02:42:44.430Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="low rank representation">
-<meta name="twitter:description" content="The discriminations between the Low rank representation method and RPCA method1. The representation differenceThe RPCA prototype can be formulated by : $$\min {D, E} \operatorname{rank}(D)+\lambda|E|{">
+<meta name="twitter:description" content="The discriminations between the Low rank representation method and RPCA method1. The representation difference The RPCA prototype can be formulated by :  \min _{D, E} \operatorname{rank}(D)+\lambda\|E">
 
 
 
@@ -354,10 +354,12 @@
       
 
       
-        <h1 id="The-discriminations-between-the-Low-rank-representation-method-and-RPCA-method"><a href="#The-discriminations-between-the-Low-rank-representation-method-and-RPCA-method" class="headerlink" title="The discriminations between the Low rank representation method and RPCA method"></a>The discriminations between the Low rank representation method and RPCA method</h1><h2 id="1-The-representation-difference"><a href="#1-The-representation-difference" class="headerlink" title="1. The representation difference"></a>1. The representation difference</h2><pre><code>The RPCA prototype can be formulated by :
-</code></pre><p>$$<br>\min <em>{D, E} \operatorname{rank}(D)+\lambda|E|</em>{\ell}, \quad \text { s.t. } \quad X=D+E<br>$$<br>Our purpose is to recover the matrix   $$D$$  from the original data matrix while $$E$$  indicates the representation error, the less the $$E$$  is, the more accurate the prototype performs.  We try to seek a low rank representation of  $$D$$  which implicitly manifests the samples drawn from the data lie in a single subspace, but the condition is usually  difficult to satisfy. Give a simple example,</p>
-<p>​    The low rank representation model can be specified by:<br>$$<br>\min <em>{Z, E} \operatorname{rank}(D)+\lambda|E|</em>{\ell}, \quad \text { s.t. } \quad X=AZ+E<br>$$</p>
-
+        <h1 id="The-discriminations-between-the-Low-rank-representation-method-and-RPCA-method"><a href="#The-discriminations-between-the-Low-rank-representation-method-and-RPCA-method" class="headerlink" title="The discriminations between the Low rank representation method and RPCA method"></a>The discriminations between the Low rank representation method and RPCA method</h1><h2 id="1-The-representation-difference"><a href="#1-The-representation-difference" class="headerlink" title="1. The representation difference"></a>1. The representation difference</h2><pre><code> The RPCA prototype can be formulated by :
+</code></pre><script type="math/tex; mode=display">
+\min _{D, E} \operatorname{rank}(D)+\lambda\|E\|_{\ell}, \quad \text { s.t. } \quad X=D+E</script><p>Our purpose is to recover the matrix   <script type="math/tex">D</script>  from the original data matrix while <script type="math/tex">E</script>  indicates the representation error, the less the <script type="math/tex">E</script>  is, the more accurate the prototype performs.  We try to seek a low rank representation of  <script type="math/tex">D</script>  which implicitly manifests the samples drawn from the data lie in a single subspace, but the condition is usually  difficult to satisfy. Give a simple example,</p>
+<p>​    The low rank representation model can be specified by:</p>
+<script type="math/tex; mode=display">
+\min _{Z, E} \operatorname{rank}(D)+\lambda\|E\|_{\ell}, \quad \text { s.t. } \quad X=AZ+E</script>
       
     </div>
     
@@ -480,7 +482,7 @@
               
                 <a href="/归档/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -758,6 +760,28 @@
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 

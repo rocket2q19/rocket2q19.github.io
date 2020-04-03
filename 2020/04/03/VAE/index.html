@@ -81,13 +81,17 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Welcome">
-<meta property="og:url" content="http://yoursite.com/categories/论文写作/index.html">
+<meta name="description" content="The questions in VAERecently, I had just read a paper regarding the hyperspectral anomaly detection which integrates the technique of  VAE and GAN. The VAE algorithm may work as well when implemented">
+<meta property="og:type" content="article">
+<meta property="og:title" content="VAE">
+<meta property="og:url" content="http://yoursite.com/2020/04/03/VAE/index.html">
 <meta property="og:site_name" content="Welcome">
+<meta property="og:description" content="The questions in VAERecently, I had just read a paper regarding the hyperspectral anomaly detection which integrates the technique of  VAE and GAN. The VAE algorithm may work as well when implemented">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-04-03T02:42:28.978Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Welcome">
+<meta name="twitter:title" content="VAE">
+<meta name="twitter:description" content="The questions in VAERecently, I had just read a paper regarding the hyperspectral anomaly detection which integrates the technique of  VAE and GAN. The VAE algorithm may work as well when implemented">
 
 
 
@@ -117,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/categories/论文写作/">
+  <link rel="canonical" href="http://yoursite.com/2020/04/03/VAE/">
 
 
 
 
 
-  <title>分类: 论文写作 | Welcome</title>
+  <title>VAE | Welcome</title>
   
 
 
@@ -142,7 +146,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -246,53 +250,143 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block category">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>论文写作<small>分类</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/03/VAE/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Rocket Yu">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/header.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Welcome">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2019/11/22/论文写作要点/" itemprop="url">
-              
-                <span itemprop="name">论文写作要点</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">VAE</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-11-22T11:05:29+08:00" content="2019-11-22">
-          11-22
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-03T10:15:29+08:00">
+                2020-04-03
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    </div>
+      
 
+      
+        <h1 id="The-questions-in-VAE"><a href="#The-questions-in-VAE" class="headerlink" title="The questions in VAE"></a>The questions in VAE</h1><p>Recently, I had just read a paper regarding the hyperspectral anomaly detection which integrates the technique of  VAE and GAN. The VAE algorithm may work as well when implemented single</p>
+<h2 id="1-Why-we-choose-the-cross-entropy-loss-as-our-reconstruction-error？"><a href="#1-Why-we-choose-the-cross-entropy-loss-as-our-reconstruction-error？" class="headerlink" title="1. Why we choose the cross-entropy loss as our reconstruction error？"></a>1. Why we choose the cross-entropy loss as our reconstruction error？</h2><p>​    As we know, the MSE error is utilized in normal autoencoders, which computes the Euclidean distance between the original data and the reconstructed data. However, considering the specific hand-writing MNIST dataset, minor errors in the position where the digits appear is allowed since each individual own unique writing styles. However, the position of these digits are forced to converge to a specific area which is not our expectation. The cross entropy loss can well address the issue.</p>
+<h2 id="2-The-deduction-of-VAE-loss-function"><a href="#2-The-deduction-of-VAE-loss-function" class="headerlink" title="2. The deduction of VAE loss function"></a>2. The deduction of VAE loss function</h2><h2 id="3-Why-we-select-the-probabilistic-distribution-feature-as-the-input-sample-of-the-random-walk-process"><a href="#3-Why-we-select-the-probabilistic-distribution-feature-as-the-input-sample-of-the-random-walk-process" class="headerlink" title="3. Why we select the probabilistic distribution feature as the input sample of the random walk process?"></a>3. Why we select the probabilistic distribution feature as the input sample of the random walk process?</h2><p>​    There exists a sampling process during the generation of z. We can see in the formula $ z = \mu + \sigma *  \bold \epsilon$ , where $\epsilon$ is sampled from $N \sim (0,1)$. </p>
+<h2 id="4-How-to-compute-the-Wasserstein-distance-between-two-multivariate-Gaussian-distributions"><a href="#4-How-to-compute-the-Wasserstein-distance-between-two-multivariate-Gaussian-distributions" class="headerlink" title="4. How to compute the Wasserstein distance between two multivariate Gaussian distributions"></a>4. How to compute the Wasserstein distance between two multivariate Gaussian distributions</h2>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/11/22/论文写作要点/" rel="next" title="论文写作要点">
+                <i class="fa fa-chevron-left"></i> 论文写作要点
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -300,6 +394,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -320,8 +418,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -390,6 +497,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#The-questions-in-VAE"><span class="nav-number">1.</span> <span class="nav-text">The questions in VAE</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Why-we-choose-the-cross-entropy-loss-as-our-reconstruction-error？"><span class="nav-number">1.1.</span> <span class="nav-text">1. Why we choose the cross-entropy loss as our reconstruction error？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-The-deduction-of-VAE-loss-function"><span class="nav-number">1.2.</span> <span class="nav-text">2. The deduction of VAE loss function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Why-we-select-the-probabilistic-distribution-feature-as-the-input-sample-of-the-random-walk-process"><span class="nav-number">1.3.</span> <span class="nav-text">3. Why we select the probabilistic distribution feature as the input sample of the random walk process?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-How-to-compute-the-Wasserstein-distance-between-two-multivariate-Gaussian-distributions"><span class="nav-number">1.4.</span> <span class="nav-text">4. How to compute the Wasserstein distance between two multivariate Gaussian distributions</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -539,6 +662,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

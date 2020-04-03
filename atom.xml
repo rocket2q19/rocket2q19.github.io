@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-11-22T03:25:03.876Z</updated>
+  <updated>2020-04-03T02:42:28.978Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>VAE</title>
+    <link href="http://yoursite.com/2020/04/03/VAE/"/>
+    <id>http://yoursite.com/2020/04/03/VAE/</id>
+    <published>2020-04-03T02:15:29.000Z</published>
+    <updated>2020-04-03T02:42:28.978Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="The-questions-in-VAE"><a href="#The-questions-in-VAE" class="headerlink" title="The questions in VAE"></a>The questions in VAE</h1><p>Recently, I had just read a paper regarding the hyperspectral anomaly detection which integrates the technique of  VAE and GAN. The VAE algorithm may work as well when implemented single</p><h2 id="1-Why-we-choose-the-cross-entropy-loss-as-our-reconstruction-error？"><a href="#1-Why-we-choose-the-cross-entropy-loss-as-our-reconstruction-error？" class="headerlink" title="1. Why we choose the cross-entropy loss as our reconstruction error？"></a>1. Why we choose the cross-entropy loss as our reconstruction error？</h2><p>​    As we know, the MSE error is utilized in normal autoencoders, which computes the Euclidean distance between the original data and the reconstructed data. However, considering the specific hand-writing MNIST dataset, minor errors in the position where the digits appear is allowed since each individual own unique writing styles. However, the position of these digits are forced to converge to a specific area which is not our expectation. The cross entropy loss can well address the issue.</p><h2 id="2-The-deduction-of-VAE-loss-function"><a href="#2-The-deduction-of-VAE-loss-function" class="headerlink" title="2. The deduction of VAE loss function"></a>2. The deduction of VAE loss function</h2><h2 id="3-Why-we-select-the-probabilistic-distribution-feature-as-the-input-sample-of-the-random-walk-process"><a href="#3-Why-we-select-the-probabilistic-distribution-feature-as-the-input-sample-of-the-random-walk-process" class="headerlink" title="3. Why we select the probabilistic distribution feature as the input sample of the random walk process?"></a>3. Why we select the probabilistic distribution feature as the input sample of the random walk process?</h2><p>​    There exists a sampling process during the generation of z. We can see in the formula $ z = \mu + \sigma *  \bold \epsilon$ , where $\epsilon$ is sampled from $N \sim (0,1)$. </p><h2 id="4-How-to-compute-the-Wasserstein-distance-between-two-multivariate-Gaussian-distributions"><a href="#4-How-to-compute-the-Wasserstein-distance-between-two-multivariate-Gaussian-distributions" class="headerlink" title="4. How to compute the Wasserstein distance between two multivariate Gaussian distributions"></a>4. How to compute the Wasserstein distance between two multivariate Gaussian distributions</h2>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;The-questions-in-VAE&quot;&gt;&lt;a href=&quot;#The-questions-in-VAE&quot; class=&quot;headerlink&quot; title=&quot;The questions in VAE&quot;&gt;&lt;/a&gt;The questions in VAE&lt;/h1&gt;&lt;
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>论文写作要点</title>
@@ -46,9 +67,9 @@
     <link href="http://yoursite.com/2019/09/17/low%20rank%20representation/"/>
     <id>http://yoursite.com/2019/09/17/low rank representation/</id>
     <published>2019-09-17T12:03:52.000Z</published>
-    <updated>2019-11-22T03:28:57.632Z</updated>
+    <updated>2020-04-03T02:42:44.430Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="The-discriminations-between-the-Low-rank-representation-method-and-RPCA-method"><a href="#The-discriminations-between-the-Low-rank-representation-method-and-RPCA-method" class="headerlink" title="The discriminations between the Low rank representation method and RPCA method"></a>The discriminations between the Low rank representation method and RPCA method</h1><h2 id="1-The-representation-difference"><a href="#1-The-representation-difference" class="headerlink" title="1. The representation difference"></a>1. The representation difference</h2><pre><code>The RPCA prototype can be formulated by :</code></pre><p>$$<br>\min <em>{D, E} \operatorname{rank}(D)+\lambda|E|</em>{\ell}, \quad \text { s.t. } \quad X=D+E<br>$$<br>Our purpose is to recover the matrix   $$D$$  from the original data matrix while $$E$$  indicates the representation error, the less the $$E$$  is, the more accurate the prototype performs.  We try to seek a low rank representation of  $$D$$  which implicitly manifests the samples drawn from the data lie in a single subspace, but the condition is usually  difficult to satisfy. Give a simple example,</p><p>​    The low rank representation model can be specified by:<br>$$<br>\min <em>{Z, E} \operatorname{rank}(D)+\lambda|E|</em>{\ell}, \quad \text { s.t. } \quad X=AZ+E<br>$$</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="The-discriminations-between-the-Low-rank-representation-method-and-RPCA-method"><a href="#The-discriminations-between-the-Low-rank-representation-method-and-RPCA-method" class="headerlink" title="The discriminations between the Low rank representation method and RPCA method"></a>The discriminations between the Low rank representation method and RPCA method</h1><h2 id="1-The-representation-difference"><a href="#1-The-representation-difference" class="headerlink" title="1. The representation difference"></a>1. The representation difference</h2><pre><code> The RPCA prototype can be formulated by :</code></pre><script type="math/tex; mode=display">\min _{D, E} \operatorname{rank}(D)+\lambda\|E\|_{\ell}, \quad \text { s.t. } \quad X=D+E</script><p>Our purpose is to recover the matrix   <script type="math/tex">D</script>  from the original data matrix while <script type="math/tex">E</script>  indicates the representation error, the less the <script type="math/tex">E</script>  is, the more accurate the prototype performs.  We try to seek a low rank representation of  <script type="math/tex">D</script>  which implicitly manifests the samples drawn from the data lie in a single subspace, but the condition is usually  difficult to satisfy. Give a simple example,</p><p>​    The low rank representation model can be specified by:</p><script type="math/tex; mode=display">\min _{Z, E} \operatorname{rank}(D)+\lambda\|E\|_{\ell}, \quad \text { s.t. } \quad X=AZ+E</script>]]></content>
     
     <summary type="html">
     
