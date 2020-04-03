@@ -74,6 +74,8 @@
 
 
 
+  <link rel="alternate" href="/atom.xml" title="Welcome" type="application/atom+xml">
+
 
 
 
@@ -95,7 +97,7 @@
     root: '/',
     scheme: 'Pisces',
     version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -506,7 +508,8 @@
       
         
           
-          The discriminations between the Low rank representation method and RPCA method1. The representation differenceThe RPCA prototype can be formulated by :$$\min {D, E} \operatorname{rank}(D)+\lambda|E|{\ell}, \quad \text { s.t. } \quad X=D+E$$Our purpose is to recover the matrix   $$D$$  from the origi
+          The discriminations between the Low rank representation method and RPCA method1. The representation differenceThe RPCA prototype can be formulated by :
+$$\min {D, E} \operatorname{rank}(D)+\lambda|E|{\ell}, \quad \text { s.t. } \quad X=D+E$$Our purpose is to recover the matrix   $$D$$  from the orig
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -634,11 +637,9 @@
           
           Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
 Quick StartCreate a new post1$ hexo new "My New Post"
-
 More info: Writing
 Run server1$ hexo server
-
-More 
+More in
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -759,6 +760,13 @@ More
           </nav>
 
           
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
 
           
 
@@ -787,7 +795,7 @@ More
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -825,6 +833,8 @@ More
     
       <div class="back-to-top">
         <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
         
       </div>
     
