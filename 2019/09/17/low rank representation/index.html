@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="The discriminations between the Low rank representation method and RPCA method1. The representation difference The RPCA prototype can be formulated by :  \min _{D, E} \operatorname{rank}(D)+\lambda\|E">
+<meta name="description" content="The discriminations between the Low rank representation method and RPCA method 1. The representation difference The RPCA prototype can be formulated by : \[ \min _{D, E} \operatorname{rank}(D)+\la">
 <meta name="keywords" content="低秩表示,RPCA">
 <meta property="og:type" content="article">
 <meta property="og:title" content="low rank representation">
 <meta property="og:url" content="http://yoursite.com/2019/09/17/low rank representation/index.html">
 <meta property="og:site_name" content="Welcome">
-<meta property="og:description" content="The discriminations between the Low rank representation method and RPCA method1. The representation difference The RPCA prototype can be formulated by :  \min _{D, E} \operatorname{rank}(D)+\lambda\|E">
+<meta property="og:description" content="The discriminations between the Low rank representation method and RPCA method 1. The representation difference The RPCA prototype can be formulated by : \[ \min _{D, E} \operatorname{rank}(D)+\la">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2020-04-03T02:42:44.430Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="low rank representation">
-<meta name="twitter:description" content="The discriminations between the Low rank representation method and RPCA method1. The representation difference The RPCA prototype can be formulated by :  \min _{D, E} \operatorname{rank}(D)+\lambda\|E">
+<meta name="twitter:description" content="The discriminations between the Low rank representation method and RPCA method 1. The representation difference The RPCA prototype can be formulated by : \[ \min _{D, E} \operatorname{rank}(D)+\la">
 
 
 
@@ -354,12 +354,16 @@
       
 
       
-        <h1 id="The-discriminations-between-the-Low-rank-representation-method-and-RPCA-method"><a href="#The-discriminations-between-the-Low-rank-representation-method-and-RPCA-method" class="headerlink" title="The discriminations between the Low rank representation method and RPCA method"></a>The discriminations between the Low rank representation method and RPCA method</h1><h2 id="1-The-representation-difference"><a href="#1-The-representation-difference" class="headerlink" title="1. The representation difference"></a>1. The representation difference</h2><pre><code> The RPCA prototype can be formulated by :
-</code></pre><script type="math/tex; mode=display">
-\min _{D, E} \operatorname{rank}(D)+\lambda\|E\|_{\ell}, \quad \text { s.t. } \quad X=D+E</script><p>Our purpose is to recover the matrix   <script type="math/tex">D</script>  from the original data matrix while <script type="math/tex">E</script>  indicates the representation error, the less the <script type="math/tex">E</script>  is, the more accurate the prototype performs.  We try to seek a low rank representation of  <script type="math/tex">D</script>  which implicitly manifests the samples drawn from the data lie in a single subspace, but the condition is usually  difficult to satisfy. Give a simple example,</p>
-<p>​    The low rank representation model can be specified by:</p>
-<script type="math/tex; mode=display">
-\min _{Z, E} \operatorname{rank}(D)+\lambda\|E\|_{\ell}, \quad \text { s.t. } \quad X=AZ+E</script>
+        <h1 id="the-discriminations-between-the-low-rank-representation-method-and-rpca-method">The discriminations between the Low rank representation method and RPCA method</h1>
+<h2 id="the-representation-difference">1. The representation difference</h2>
+<pre><code>The RPCA prototype can be formulated by :</code></pre>
+<p><span class="math display">\[
+\min _{D, E} \operatorname{rank}(D)+\lambda\|E\|_{\ell}, \quad \text { s.t. } \quad X=D+E
+\]</span> Our purpose is to recover the matrix <span class="math display">\[D\]</span> from the original data matrix while <span class="math display">\[E\]</span> indicates the representation error, the less the <span class="math display">\[E\]</span> is, the more accurate the prototype performs. We try to seek a low rank representation of <span class="math display">\[D\]</span> which implicitly manifests the samples drawn from the data lie in a single subspace, but the condition is usually difficult to satisfy. Give a simple example,</p>
+<p>​ The low rank representation model can be specified by: <span class="math display">\[
+\min _{Z, E} \operatorname{rank}(D)+\lambda\|E\|_{\ell}, \quad \text { s.t. } \quad X=AZ+E
+\]</span></p>
+
       
     </div>
     
@@ -544,7 +548,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#The-discriminations-between-the-Low-rank-representation-method-and-RPCA-method"><span class="nav-number">1.</span> <span class="nav-text">The discriminations between the Low rank representation method and RPCA method</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-The-representation-difference"><span class="nav-number">1.1.</span> <span class="nav-text">1. The representation difference</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#the-discriminations-between-the-low-rank-representation-method-and-rpca-method"><span class="nav-number">1.</span> <span class="nav-text">The discriminations between the Low rank representation method and RPCA method</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#the-representation-difference"><span class="nav-number">1.1.</span> <span class="nav-text">1. The representation difference</span></a></li></ol></li></ol></div>
             
 
           </div>
