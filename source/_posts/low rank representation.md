@@ -7,6 +7,7 @@ categories:
 tags:
 - 低秩表示
 - RPCA
+mathjax: true
 
 ---
 
