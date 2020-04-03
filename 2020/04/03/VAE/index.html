@@ -81,17 +81,17 @@
 
 
 
-<meta name="description" content="The questions in VAERecently, I had just read a paper regarding the hyperspectral anomaly detection which integrates the technique of  VAE and GAN. The VAE algorithm may work as well when implemented">
+<meta name="description" content="The questions in VAE Recently, I had just read a paper regarding the hyperspectral anomaly detection which integrates the technique of VAE and GAN. The VAE algorithm may work as well when implemented">
 <meta property="og:type" content="article">
 <meta property="og:title" content="VAE">
 <meta property="og:url" content="http://yoursite.com/2020/04/03/VAE/index.html">
 <meta property="og:site_name" content="Welcome">
-<meta property="og:description" content="The questions in VAERecently, I had just read a paper regarding the hyperspectral anomaly detection which integrates the technique of  VAE and GAN. The VAE algorithm may work as well when implemented">
+<meta property="og:description" content="The questions in VAE Recently, I had just read a paper regarding the hyperspectral anomaly detection which integrates the technique of VAE and GAN. The VAE algorithm may work as well when implemented">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2020-04-03T02:42:28.978Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="VAE">
-<meta name="twitter:description" content="The questions in VAERecently, I had just read a paper regarding the hyperspectral anomaly detection which integrates the technique of  VAE and GAN. The VAE algorithm may work as well when implemented">
+<meta name="twitter:description" content="The questions in VAE Recently, I had just read a paper regarding the hyperspectral anomaly detection which integrates the technique of VAE and GAN. The VAE algorithm may work as well when implemented">
 
 
 
@@ -162,7 +162,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle">秉忠贞之志，守谦退之节</p>
+        <p class="site-subtitle">人间有味是清欢</p>
       
   </div>
 
@@ -269,7 +269,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Rocket Yu">
       <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/header.JPG">
+      <meta itemprop="image" content="/images/dongpo.JPG">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -331,10 +331,15 @@
       
 
       
-        <h1 id="The-questions-in-VAE"><a href="#The-questions-in-VAE" class="headerlink" title="The questions in VAE"></a>The questions in VAE</h1><p>Recently, I had just read a paper regarding the hyperspectral anomaly detection which integrates the technique of  VAE and GAN. The VAE algorithm may work as well when implemented single</p>
-<h2 id="1-Why-we-choose-the-cross-entropy-loss-as-our-reconstruction-error？"><a href="#1-Why-we-choose-the-cross-entropy-loss-as-our-reconstruction-error？" class="headerlink" title="1. Why we choose the cross-entropy loss as our reconstruction error？"></a>1. Why we choose the cross-entropy loss as our reconstruction error？</h2><p>​    As we know, the MSE error is utilized in normal autoencoders, which computes the Euclidean distance between the original data and the reconstructed data. However, considering the specific hand-writing MNIST dataset, minor errors in the position where the digits appear is allowed since each individual own unique writing styles. However, the position of these digits are forced to converge to a specific area which is not our expectation. The cross entropy loss can well address the issue.</p>
-<h2 id="2-The-deduction-of-VAE-loss-function"><a href="#2-The-deduction-of-VAE-loss-function" class="headerlink" title="2. The deduction of VAE loss function"></a>2. The deduction of VAE loss function</h2><h2 id="3-Why-we-select-the-probabilistic-distribution-feature-as-the-input-sample-of-the-random-walk-process"><a href="#3-Why-we-select-the-probabilistic-distribution-feature-as-the-input-sample-of-the-random-walk-process" class="headerlink" title="3. Why we select the probabilistic distribution feature as the input sample of the random walk process?"></a>3. Why we select the probabilistic distribution feature as the input sample of the random walk process?</h2><p>​    There exists a sampling process during the generation of z. We can see in the formula $ z = \mu + \sigma *  \bold \epsilon$ , where $\epsilon$ is sampled from $N \sim (0,1)$. </p>
-<h2 id="4-How-to-compute-the-Wasserstein-distance-between-two-multivariate-Gaussian-distributions"><a href="#4-How-to-compute-the-Wasserstein-distance-between-two-multivariate-Gaussian-distributions" class="headerlink" title="4. How to compute the Wasserstein distance between two multivariate Gaussian distributions"></a>4. How to compute the Wasserstein distance between two multivariate Gaussian distributions</h2>
+        <h1 id="the-questions-in-vae">The questions in VAE</h1>
+<p>Recently, I had just read a paper regarding the hyperspectral anomaly detection which integrates the technique of VAE and GAN. The VAE algorithm may work as well when implemented single</p>
+<h2 id="why-we-choose-the-cross-entropy-loss-as-our-reconstruction-error">1. Why we choose the cross-entropy loss as our reconstruction error？</h2>
+<p>​ As we know, the MSE error is utilized in normal autoencoders, which computes the Euclidean distance between the original data and the reconstructed data. However, considering the specific hand-writing MNIST dataset, minor errors in the position where the digits appear is allowed since each individual own unique writing styles. However, the position of these digits are forced to converge to a specific area which is not our expectation. The cross entropy loss can well address the issue.</p>
+<h2 id="the-deduction-of-vae-loss-function">2. The deduction of VAE loss function</h2>
+<h2 id="why-we-select-the-probabilistic-distribution-feature-as-the-input-sample-of-the-random-walk-process">3. Why we select the probabilistic distribution feature as the input sample of the random walk process?</h2>
+<p>​ There exists a sampling process during the generation of z. We can see in the formula $ z = + $ , where <span class="math inline">\(\epsilon\)</span> is sampled from <span class="math inline">\(N \sim (0,1)\)</span>.</p>
+<h2 id="how-to-compute-the-wasserstein-distance-between-two-multivariate-gaussian-distributions">4. How to compute the Wasserstein distance between two multivariate Gaussian distributions</h2>
+
       
     </div>
     
@@ -432,7 +437,7 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="/images/header.JPG" alt="Rocket Yu">
+              <img class="site-author-image" itemprop="image" src="/images/dongpo.JPG" alt="Rocket Yu">
             
               <p class="site-author-name" itemprop="name">Rocket Yu</p>
               <p class="site-description motion-element" itemprop="description"></p>
@@ -507,7 +512,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#The-questions-in-VAE"><span class="nav-number">1.</span> <span class="nav-text">The questions in VAE</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Why-we-choose-the-cross-entropy-loss-as-our-reconstruction-error？"><span class="nav-number">1.1.</span> <span class="nav-text">1. Why we choose the cross-entropy loss as our reconstruction error？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-The-deduction-of-VAE-loss-function"><span class="nav-number">1.2.</span> <span class="nav-text">2. The deduction of VAE loss function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Why-we-select-the-probabilistic-distribution-feature-as-the-input-sample-of-the-random-walk-process"><span class="nav-number">1.3.</span> <span class="nav-text">3. Why we select the probabilistic distribution feature as the input sample of the random walk process?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-How-to-compute-the-Wasserstein-distance-between-two-multivariate-Gaussian-distributions"><span class="nav-number">1.4.</span> <span class="nav-text">4. How to compute the Wasserstein distance between two multivariate Gaussian distributions</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#the-questions-in-vae"><span class="nav-number">1.</span> <span class="nav-text">The questions in VAE</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#why-we-choose-the-cross-entropy-loss-as-our-reconstruction-error"><span class="nav-number">1.1.</span> <span class="nav-text">1. Why we choose the cross-entropy loss as our reconstruction error？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#the-deduction-of-vae-loss-function"><span class="nav-number">1.2.</span> <span class="nav-text">2. The deduction of VAE loss function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#why-we-select-the-probabilistic-distribution-feature-as-the-input-sample-of-the-random-walk-process"><span class="nav-number">1.3.</span> <span class="nav-text">3. Why we select the probabilistic distribution feature as the input sample of the random walk process?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#how-to-compute-the-wasserstein-distance-between-two-multivariate-gaussian-distributions"><span class="nav-number">1.4.</span> <span class="nav-text">4. How to compute the Wasserstein distance between two multivariate Gaussian distributions</span></a></li></ol></li></ol></div>
             
 
           </div>
