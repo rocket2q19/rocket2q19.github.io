@@ -1,19 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>VAE</title>
-    <url>/2020/04/03/VAE/</url>
-    <content><![CDATA[<h1 id="the-questions-in-vae">The questions in VAE</h1>
-<p>Recently, I had just read a paper regarding the hyperspectral anomaly detection which integrates the technique of VAE and GAN. The VAE algorithm may work as well when implemented single</p>
-<h2 id="why-we-choose-the-cross-entropy-loss-as-our-reconstruction-error">1. Why we choose the cross-entropy loss as our reconstruction error？</h2>
-<p>​ As we know, the MSE error is utilized in normal autoencoders, which computes the Euclidean distance between the original data and the reconstructed data. However, considering the specific hand-writing MNIST dataset, minor errors in the position where the digits appear is allowed since each individual own unique writing styles. However, the position of these digits are forced to converge to a specific area which is not our expectation. The cross entropy loss can well address the issue.</p>
-<h2 id="the-deduction-of-vae-loss-function">2. The deduction of VAE loss function</h2>
-<h2 id="why-we-select-the-probabilistic-distribution-feature-as-the-input-sample-of-the-random-walk-process">3. Why we select the probabilistic distribution feature as the input sample of the random walk process?</h2>
-<p>​ There exists a sampling process during the generation of z. We can see in the formula $ z = + $ , where <span class="math inline">\(\epsilon\)</span> is sampled from <span class="math inline">\(N \sim (0,1)\)</span>.</p>
-<h2 id="how-to-compute-the-wasserstein-distance-between-two-multivariate-gaussian-distributions">4. How to compute the Wasserstein distance between two multivariate Gaussian distributions</h2>
-]]></content>
-  </entry>
-  <entry>
     <title>Hello World</title>
     <url>/2019/09/08/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
@@ -30,6 +17,19 @@
 <h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>VAE</title>
+    <url>/2020/04/03/VAE/</url>
+    <content><![CDATA[<h1 id="the-questions-in-vae">The questions in VAE</h1>
+<p>Recently, I had just read a paper regarding the hyperspectral anomaly detection which integrates the technique of VAE and GAN. The VAE algorithm may work as well when implemented single</p>
+<h2 id="why-we-choose-the-cross-entropy-loss-as-our-reconstruction-error">1. Why we choose the cross-entropy loss as our reconstruction error？</h2>
+<p>​ As we know, the MSE error is utilized in normal autoencoders, which computes the Euclidean distance between the original data and the reconstructed data. However, considering the specific hand-writing MNIST dataset, minor errors in the position where the digits appear is allowed since each individual own unique writing styles. However, the position of these digits are forced to converge to a specific area which is not our expectation. The cross entropy loss can well address the issue.</p>
+<h2 id="the-deduction-of-vae-loss-function">2. The deduction of VAE loss function</h2>
+<h2 id="why-we-select-the-probabilistic-distribution-feature-as-the-input-sample-of-the-random-walk-process">3. Why we select the probabilistic distribution feature as the input sample of the random walk process?</h2>
+<p>​ There exists a sampling process during the generation of z. We can see in the formula $ z = + $ , where <span class="math inline">\(\epsilon\)</span> is sampled from <span class="math inline">\(N \sim (0,1)\)</span>.</p>
+<h2 id="how-to-compute-the-wasserstein-distance-between-two-multivariate-gaussian-distributions">4. How to compute the Wasserstein distance between two multivariate Gaussian distributions</h2>
 ]]></content>
   </entry>
   <entry>
