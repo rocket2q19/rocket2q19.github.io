@@ -2,9 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>sqy&#39;s blog</title>
-    <link>https://localhost:1313/</link>
+    <link>rocket2q19.github.io/</link>
     <description>Recent content on sqy&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language><atom:link href="https://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 10 Nov 2022 12:07:46 +0800</lastBuildDate><atom:link href="rocket2q19.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Test</title>
+      <link>rocket2q19.github.io/post/test/</link>
+      <pubDate>Thu, 10 Nov 2022 12:07:46 +0800</pubDate>
+      
+      <guid>rocket2q19.github.io/post/test/</guid>
+      <description>we are young</description>
+    </item>
+    
   </channel>
 </rss>
