@@ -1,19 +1,36 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>sqy&#39;s blog</title>
-    <link>rocket2q19.github.io/</link>
-    <description>Recent content on sqy&#39;s blog</description>
+    <title>Mainroad</title>
+    <link>/</link>
+    <description>Recent content on Mainroad</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
-    <lastBuildDate>Thu, 10 Nov 2022 12:07:46 +0800</lastBuildDate><atom:link href="rocket2q19.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Thu, 10 Nov 2022 12:07:46 +0800</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Test</title>
-      <link>rocket2q19.github.io/post/test/</link>
+      <link>/post/test/</link>
       <pubDate>Thu, 10 Nov 2022 12:07:46 +0800</pubDate>
       
-      <guid>rocket2q19.github.io/post/test/</guid>
+      <guid>/post/test/</guid>
       <description>we are young</description>
+    </item>
+    
+    <item>
+      <title>VAE</title>
+      <link>/post/vae/</link>
+      <pubDate>Sat, 05 Nov 2022 18:32:02 +0800</pubDate>
+      
+      <guid>/post/vae/</guid>
+      <description>VAE: 损失函数的推导及神经网络的实现 之前反复看过看几次VAE，在网络也看了好多教程，对于一些问题始终没有找到答案，最近翻看白板推导大佬的视频，发现更新了关于VAE的章节，结合我自己的理解，写下这篇文章，欢迎大家一起讨论。
+VAE的思想 我们希望构建一个生成模型 $p(x)=\int_{z} p(x|z) p(z) dz$
+通过引入一个隐变量 $q(z)$ , 从中采样得到 $z$ , 再从条件分布$P(x|z)$中采样即可得到样本。
+问题是，在求取上式的积分中，无法做到遍历所有的 $z$ , 于是针对对数似然函数，进行了一系列的变形处理。
+损失函数的推导 用 $z$ 表示引入的隐变量， $P(x)$ 表示样本的先验分布， 则 样本的 log likelihood 表示为
+​ $$ \begin{align} \log P(x)=&amp;amp; \log P(x,z) - \log P(z|x) \ =&amp;amp; \log \frac {P(x,z)}{q(z) } - \log \frac{P(z|x)}{q(z)} \ \end{align} $$
+引入隐变量$z$，两边同时对$z$ 进行积分，得
+$$左边 =\int{q(z)} \log P(x) dz =\log P(x)\int {q(z)} dz = \log P(x) $$
+$ \begin{align}\mbox{右边} =&amp;amp; \int q(z) \log \frac {P(x,z)}{q(z)}dz - \int q(z) \log \frac{P(z|x)}{q(z)}dz \ =&amp;amp; ELBO + KL(q(z)||P(z|x)) \ \end{align}$</description>
     </item>
     
   </channel>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>VAE - Mainroad</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+		<meta property="og:title" content="VAE" />
+<meta property="og:description" content="VAE: 损失函数的推导及神经网络的实现 之前反复看过看几次VAE，在网络也看了好多教程，对于一些问题始终没有找到答案，最近翻看白板推导大佬的视频，发现更新了关于VAE的章节，结合我自己的理解，写下这篇文章，欢迎大家一起讨论。
+VAE的思想 我们希望构建一个生成模型 $p(x)=\int_{z} p(x|z) p(z) dz$
+通过引入一个隐变量 $q(z)$ , 从中采样得到 $z$ , 再从条件分布$P(x|z)$中采样即可得到样本。
+问题是，在求取上式的积分中，无法做到遍历所有的 $z$ , 于是针对对数似然函数，进行了一系列的变形处理。
+损失函数的推导 用 $z$ 表示引入的隐变量， $P(x)$ 表示样本的先验分布， 则 样本的 log likelihood 表示为
+​ $$ \begin{align} \log P(x)=&amp; \log P(x,z) - \log P(z|x) \ =&amp; \log \frac {P(x,z)}{q(z) } - \log \frac{P(z|x)}{q(z)} \ \end{align} $$
+引入隐变量$z$，两边同时对$z$ 进行积分，得
+$$左边 =\int{q(z)} \log P(x) dz =\log P(x)\int {q(z)} dz = \log P(x) $$
+$ \begin{align}\mbox{右边} =&amp; \int q(z) \log \frac {P(x,z)}{q(z)}dz - \int q(z) \log \frac{P(z|x)}{q(z)}dz \ =&amp; ELBO &#43; KL(q(z)||P(z|x)) \ \end{align}$" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/vae/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-11-05T18:32:02+08:00" />
+<meta property="article:modified_time" content="2022-11-05T18:32:02+08:00" />
+
+
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="Mainroad" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">Mainroad</div>
+					<div class="logo__tagline">Just another site</div>
+				</div>
+		</a>
+	</div>
+		<div class="divider"></div>
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">VAE</h1>
+			
+		</header>
+		<div class="content post__content clearfix">
+			<h1 id="vae-损失函数的推导及神经网络的实现">VAE: 损失函数的推导及神经网络的实现</h1>
+<p>之前反复看过看几次VAE，在网络也看了好多教程，对于一些问题始终没有找到答案，最近翻看白板推导大佬的视频，发现更新了关于VAE的章节，结合我自己的理解，写下这篇文章，欢迎大家一起讨论。</p>
+<h2 id="vae的思想">VAE的思想</h2>
+<p>我们希望构建一个生成模型 $p(x)=\int_{z} p(x|z) p(z) dz$</p>
+<p>通过引入一个隐变量 $q(z)$ , 从中采样得到 $z$ , 再从条件分布$P(x|z)$中采样即可得到样本。</p>
+<p>问题是，在求取上式的积分中，无法做到遍历所有的 $z$ , 于是针对对数似然函数，进行了一系列的变形处理。</p>
+<h2 id="损失函数的推导">损失函数的推导</h2>
+<p>用 $z$ 表示引入的隐变量， $P(x)$ 表示样本的先验分布， 则 样本的 log likelihood 表示为</p>
+<p>​      $$ \begin{align} \log P(x)=&amp; \log P(x,z) - \log P(z|x) \ =&amp; \log \frac {P(x,z)}{q(z) } - \log \frac{P(z|x)}{q(z)} \ \end{align}  $$</p>
+<p>引入隐变量$z$，两边同时对$z$ 进行积分，得</p>
+<p>$$左边 =\int{q(z)} \log P(x) dz =\log P(x)\int {q(z)}  dz = \log P(x) $$</p>
+<p>$ \begin{align}\mbox{右边}  =&amp; \int q(z) \log \frac {P(x,z)}{q(z)}dz  - \int q(z) \log \frac{P(z|x)}{q(z)}dz  \ =&amp; ELBO + KL(q(z)||P(z|x)) \ \end{align}$</p>
+<p>根据琴生不等式,当为$\psi(X)$<strong>凸函数</strong>时, 有 $\psi(E(X))\leqslant  E(\psi(X))$，则</p>
+<p>$ \begin{align} -KL(q||p)=&amp; \int q(x) \log \frac{P(x)}{q(x)}dx   \  \leqslant &amp;  \log \int q(x) \frac{p(x)}{q(x)}dx \=&amp;  \log \int p(x)dx = 0\end{align}$</p>
+<p>$KL(q(z)||P(z|x)) \geqslant 0 $，故 $ELBO$ 存在着最小下界。也就是说，我们构造了一个隐变量的分布$q(z)$, 为了使得$q(z)$尽可能地逼近于后验概率$P(z|x)$, 我们只需要最小化$ KL(q(z)||P(z|x)) $，即最大化 <strong>ELBO</strong>.</p>
+<p>$\begin{align} ELBO = &amp;\int q(z) \log \frac{p(x,z)}{q(z)} \ = &amp; \int q(z) \log \frac{p(z) p(x|z)}{q(z)} \ =&amp; \int q(z) \log p(x|z) + \int q(z) \log \frac {p(z)}{q(z)} \ = &amp;  E_{q(z)}[\log p(x|z) ] - KL(q(z)||p(z)) \end{align}$</p>
+<p>这样一看，VAE的损失函数就呼之欲出了。我们令 $ {\cal L}=-ELBO$，则只需最小化 $ {\cal L}$ 即可。由于 $q(z)$ 是我们构造的一个分布，我们希望这个分布可以优化的，并且在神经网络的实现中我们想让它作为编码器使用，与输入是直接对应的，于是用 $q(z|x)$来代替 $q(z)$，并且引入encoder的参数 $\pmb  {\phi}$ 和解码器的参数 $\pmb \theta$ 这样就有：</p>
+<p>$&lt;\phi,\theta&gt;=\underset{\phi,\theta} {\operatorname{ argmin} {\cal L}}= \underset{\phi,\theta} {\operatorname{ argmin}} -E_{q_{\phi}(z|x)}[\log p_{\theta}(x|z) ] + KL(q_{\phi}(z|x)||p(z))$</p>
+<p>第一项是对 $-\log p(x|z)$ 求期望, 从另一个角度可以理解为最大化似然 $\log p(x|z)$，最大化 $\log p(x|z)$ 意味着decoder的输出尽可能地接近输入样本 $x$ 。</p>
+<p><strong>关于decoder的输出到底是样本还是概率分布的问题</strong>，具体参考这里。假设decoder的输出是一个正态分布${\cal N}(\mu(z),I)$，有</p>
+<p>$\begin{align}-\log p_{\theta}(x|z) = &amp; -\log \left (\frac{1}{\sqrt{\left(2\pi \right)^k|I|}} \exp \left(-\frac{1}{2} \left(x-\mu(z)\right)^T I (x-\mu(z)) \right) \right)  \ = &amp; \pmb {\frac{1}{2} \parallel x-\mu(z)\parallel ^2 }  + \text{const.} \end{align}$</p>
+<p>$\mu(z)$ 完成了从$z$ 到输出分布的一个映射,直接将decoder输出分布的均值$\pmb{\mu \left(z^{(i)}\right )}$作为采样输出，故神经网络的输出项为重构的样本。故$ \pmb {\frac12 \parallel x-\mu(z)\parallel ^2 } $可以看作是 reconstruction error 。</p>
+<p>第二项相当于损失函数的正则项，它直接对$q_{\phi}(z|x)$ 进行了优化，并确保了模型具有稳定的生成性。</p>
+<p>至此，VAE 损失函数的推导完成。</p>
+<h2 id="神经网络实现vae">神经网络实现VAE</h2>
+<p><img src="https://s1.ax1x.com/2020/05/04/Y9uV7F.png" alt="Y9uV7F.png"></p>
+<p>神经网络实现VAE的过程如下：首先我们假设样本数据的分布为 $p(x)$ ,</p>
+<ul>
+<li><strong>神经网络的输入</strong>：$X = x^{(1)},x^{(2)} \cdots x^{(N)}$为对该分布的采样</li>
+<li><strong>编码器</strong>：对于样本 $x^{(i)}$ , 编码器  $\pmb{q_{\phi}(z|x)}$ 对 $X$进行了编码，完成了从 $X$  到 $\mu^{(i)}$ 和 $\sigma^{(i)}$ 的映射, 通过<strong>重参数技巧</strong>进行采样得到 $z^{(i)}$，</li>
+<li><strong>解码器</strong>：  $\pmb {p_{\theta}(x|z)}$ ，神经网络完成了从 $z$ 到 $\pmb {\mu(z^{(i)})}$  的映射</li>
+<li><strong>神经网络的输出</strong>：似然函数分布的均值 $\pmb {\mu(z^{(i)})}$ , 该值作为对 $x^{(i)}$ 的重构</li>
+<li><strong>优化</strong>： 通过神经网络的反向传播，完成对损失函数 $ {\cal L}$ 的优化</li>
+</ul>
+
+		</div>
+	</article>
+</main>
+
+<div class="authorbox clearfix">
+	<figure class="authorbox__avatar">
+		<img alt="John Doe avatar" src="/img/avatar.png" class="avatar" height="90" width="90">
+	</figure>
+	<div class="authorbox__header">
+		<span class="authorbox__name">About John Doe</span>
+	</div>
+	<div class="authorbox__description">
+		John Doe&rsquo;s true identity is unknown. Maybe he is a successful blogger or writer. Nobody knows it.
+	</div>
+</div>
+
+
+
+			</div>
+			
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2022 Mainroad.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
+</body>
+</html>

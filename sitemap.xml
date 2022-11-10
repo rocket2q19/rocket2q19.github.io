@@ -2,17 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>rocket2q19.github.io/post/</loc>
-    <lastmod>2022-11-10T16:20:47+08:00</lastmod>
+    <loc>/</loc>
+    <lastmod>2022-11-10T12:07:46+08:00</lastmod>
   </url><url>
-    <loc>rocket2q19.github.io/</loc>
-    <lastmod>2022-11-10T16:20:47+08:00</lastmod>
+    <loc>/post/</loc>
+    <lastmod>2022-11-10T12:07:46+08:00</lastmod>
   </url><url>
-    <loc>rocket2q19.github.io/post/test/</loc>
-    <lastmod>2022-11-10T16:20:47+08:00</lastmod>
+    <loc>/post/test/</loc>
+    <lastmod>2022-11-10T12:07:46+08:00</lastmod>
   </url><url>
-    <loc>rocket2q19.github.io/categories/</loc>
+    <loc>/post/vae/</loc>
+    <lastmod>2022-11-05T18:32:02+08:00</lastmod>
   </url><url>
-    <loc>rocket2q19.github.io/tags/</loc>
+    <loc>/categories/</loc>
+  </url><url>
+    <loc>/tags/</loc>
   </url>
 </urlset>
